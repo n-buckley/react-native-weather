@@ -4,66 +4,66 @@ import { Feather} from '@expo/vector-icons'
 
 const CurrentWeather = () => {
   return (
-    <SafeAreaView style= {styles.view__safeArea}>
-      <View style={styles.view__wrapperHeader}>
+    <SafeAreaView style= {styles.SafeArea}>
+      <View style={styles.Header}>
         <Feather name="sun" size={100} color='black' />
         <Text>Current Weather</Text>
-        <Text style={styles.text__temp}>6</Text>
-        <Text style={styles.text__feels}>Feels like: 5</Text>
-        <View style={styles.view__wrapperHighLow}> 
-          <Text style={styles.text__highLow}>High: 8</Text>
-          <Text style={styles.text__highLow}>Low: 6</Text>
+        <Text style={styles.header_temp}>6</Text>
+        <Text style={styles.header_feels}>Feels like: 5</Text>
+        <View style={styles.HighLow}> 
+          <Text style={styles.highLow}>High: 8</Text>
+          <Text style={styles.highLow}>Low: 6</Text>
         </View>
       </View>
-      <View styles={styles.view_wrapperBody}>
-        <Text style={styles.text__description}>Its sunny</Text>
-        <Text style={styles.text__message}>Its perfect t-shirt weather</Text>
+      <View styles={styles.Body}>
+        <Text style={styles.body_description}>Its sunny</Text>
+        <Text style={styles.body_message}>Its perfect t-shirt weather</Text>
       </View>
     </SafeAreaView>
   )
 } 
 
 const styles = StyleSheet.create({
-  view__safeArea: {
+  SafeArea: {
     backgroundColor: 'pink',
     flex: 1,
   }, 
-  view__wrapperHeader: {
+  Header: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
-  text__temp: {
+  header_temp: {
     color: 'black',
     fontSize: 48
   }, 
 
-   text__feels: {
+  header_feels: {
     fontSize: 30, 
     color: 'black'
    },
 
-   text__highLow: {
+    highLow: {
     fontSize: 20, 
     color: 'black'
    }, 
-   view__wrapperHighLow: {
+   HighLow: {
     flexDirection: 'row',
    },
 
-   view_wrapperBody: {
+   Body: {
     justifyContent: 'flex-end', 
     alignItems: 'flex-start',
     paddingLeft: 25,
     marginBottom: 40,
    },
 
-   text__description: {
+   body_description: {
     fontSize: 48,
    },
 
-   text__message: {
+   body_message: {
     fontSize: 30, 
    }
 })
