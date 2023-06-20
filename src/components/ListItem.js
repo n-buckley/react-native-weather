@@ -1,5 +1,5 @@
 import React from "react" 
-import { SafeAreaView, View, Text, StyleSheet, FlatList, StatusBar, ImageBackground} from 'react-native'
+import { View, Text, StyleSheet} from 'react-native'
 import { Feather} from '@expo/vector-icons'
 
 const ListItem = (props) => {
