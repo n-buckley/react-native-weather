@@ -1,15 +1,15 @@
 import React from "react" 
-import {SafeAreaView, View, Text, StyleSheet, FlatList} from 'react-native'
+import {SafeAreaView, View, Text, StyleSheet, FlatList, StatusBar} from 'react-native'
 import { Feather} from '@expo/vector-icons'
 
 const Item = (props) => {
     const { dt_txt, min, max, consition} = props
     return (
-        <View>
-            <Feather name="sun" size={100} color='black' />
-            <Text>{dt_txt}</Text>
-            <Text>{min}</Text>
-            <Text>{max}</Text>
+        <View style={styles.Item} >
+            <Feather name="sun" size={50} color='white' />
+            <Text style={styles.itemDate}>{dt_txt}</Text>
+            <Text style={styles.itemTemp}>{min}</Text>
+            <Text style={styles.itemTemp}>{max}</Text>
         </View>
     )
 }
@@ -38,7 +38,7 @@ export const UpcomingWeather = () => {
                     "main": "Rain",
                 }
             ],
-            "dt_txt": "2022-08-30 16:00:00",
+            "dt_txt": "2022-08-30 17:00:00",
         }, 
         {
             "main": {
@@ -50,7 +50,7 @@ export const UpcomingWeather = () => {
                     "main": "Rain",
                 }
             ],
-            "dt_txt": "2022-08-30 16:00:00",
+            "dt_txt": "2022-08-30 18:00:00",
         }, 
     ]
     const renderItem = ({item}) => (
@@ -62,7 +62,7 @@ export const UpcomingWeather = () => {
         />
     )
     return (
-        <SafeAreaView style={styles.view__safeArea}> 
+        <SafeAreaView style={styles.SafeArea}> 
             <Text> Upcoming Weather</Text>
             <FlatList 
             data={DATA} 
@@ -75,7 +75,30 @@ export const UpcomingWeather = () => {
 const styles = StyleSheet.create({ 
     //style={styles.} 
 
-    view__safeArea: {
+    SafeArea: {
         flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
+        backgroundColor: 'red',
       }, 
+
+    Item: {
+        padding: 20, 
+        marginVertical: 8,
+        marginHorizontal: 16, 
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center', 
+        borderWidth: 5,
+        backgroundColor: 'pink',
+    },
+
+    itemTemp: {
+        color: 'white',
+        fontSize: 20,
+    },
+
+    itemDate: {
+        color: 'white',
+        fontSize: 15,
+    }
 })
