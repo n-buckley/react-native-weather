@@ -1,14 +1,17 @@
 import React from "react"
 import {View, StyleSheet} from 'react-native'
-import { CurrentWeather }  from "./src/screens/CurrentWeather"
-import { UpcomingWeather } from "./src/screens/UpcomingWeather"
+import CurrentWeather from "./src/screens/CurrentWeather"
+import UpcomingWeather from "./src/screens/UpcomingWeather"
+import City from './src/screens/City'
+//TODO: what is the differnece beteyeen impoerting like { This } versus just This
 
 
 const App = () => {
   return (
     <View style={styles.container}>
       {/* <CurrentWeather /> */}
-      <UpcomingWeather />
+      {/* <UpcomingWeather /> */}
+      <City />
     </View>
   )
 } 
