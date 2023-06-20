@@ -5,8 +5,10 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    // "plugin:react/recommended",
-    '@react-native-community'
+    "plugin:react/recommended",
+    '@react-native-community',
+    "prettier",
+    "prettier/react"
   ],
   overrides: [
     {
@@ -21,7 +23,8 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    // eslint-disable-next-line prettier/prettier
+    sourceType: 'module',
   },
   plugins: ['react'],
   rules: {}
