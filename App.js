@@ -4,7 +4,7 @@ import { Text, View, SafeAreaView, StyleSheet} from 'react-native'
 const App = () => {
   return (
     <SafeAreaView style= {styles.view__safeArea}>
-      <View style={styles.view__appContainer}>
+      <View style={styles.view__wrapperHeader}>
         <Text>Current Weather</Text>
         <Text style={styles.text__temp}>6</Text>
         <Text style={styles.text__feels}>Feels like: 5</Text>
@@ -23,10 +23,10 @@ const App = () => {
 
 const styles = StyleSheet.create({
   view__safeArea: {
-    flex: 1
-  }, 
-  view__appContainer: { 
     backgroundColor: 'pink',
+    flex: 1,
+  }, 
+  view__wrapperHeader: {
     flex: 1,
     alignItems: 'center',
   },
