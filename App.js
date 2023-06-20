@@ -13,6 +13,10 @@ const App = () => {
           <Text style={styles.text__highLow}>Low: 6</Text>
         </View>
       </View>
+      <View styles={styles.view_wrapperBody}>
+        <Text style={styles.text__description}>Its sunny</Text>
+        <Text style={styles.text__message}>Its perfect t-shirt weather</Text>
+      </View>
     </SafeAreaView>
   )
 } 
@@ -44,6 +48,19 @@ const styles = StyleSheet.create({
    view__wrapperHighLow: {
     flexDirection: 'row',
    },
+
+   view_wrapperBody: {
+    justifyContent: 'flex-end', 
+    alignItems: 'flex-start',
+   },
+
+   text__description: {
+    fontSize: 48,
+   },
+
+   text__message: {
+    fontSize: 30, 
+   }
 })
 
 export default App
