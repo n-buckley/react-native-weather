@@ -5,10 +5,9 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    "plugin:react/recommended",
+    'plugin:react/recommended',
     '@react-native-community',
-    "prettier",
-    "prettier/react"
+    'prettier'
   ],
   overrides: [
     {
