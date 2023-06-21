@@ -1,8 +1,9 @@
 import React from "react" 
 import { SafeAreaView, Text, StyleSheet, ImageBackground, StatusBar, View} from 'react-native'
-import { Feather} from '@expo/vector-icons'
+import IconText from '../components/IconText'
 
  const City = () => {
+    //TODO: is descrutuing styles something thats typical/good practice? 
     return (
         <SafeAreaView style={styles.SafeArea}>
             <ImageBackground
@@ -11,15 +12,27 @@ import { Feather} from '@expo/vector-icons'
             >
                 <Text style={[styles.city_name, styles.city_text]}>City Name</Text>
                 <Text style={[styles.city_country, styles.city_text]}>Country Name</Text>
-                <View style={styles.Population}> 
-                    <Feather name={'user'} size={50} color={'red'}/>
-                    <Text style={styles.population_text}>8000</Text>
+                <View style={[styles.Population, styles.layout_rowCenter]}> 
+                    <IconText
+                        iconName={'user'}
+                        iconColor={'red'}
+                        bodyText={'8000'}
+                        bodyTextStyles={styles.population_text}
+                    />
                 </View>
-                <View style={styles.RiseSet}> 
-                    <Feather name={'sunrise'} size={50} color={'white'}/>
-                    <Text style={styles.riseSet_text}>10:46:58 AM</Text>
-                    <Feather name={'sunset'} size={50} color={'white'}/>
-                    <Text style={styles.riseSet_text}>17:28:15 PM</Text>
+                <View style={[styles.RiseSet, styles.layout_rowCenter]}> 
+                <IconText
+                        iconName={'sunrise'}
+                        iconColor={'white'}
+                        bodyText={'10:46:58 AM'}
+                        bodyTextStyles={styles.riseSet_text}
+                    />
+                    <IconText
+                        iconName={'sunset'}
+                        iconColor={'white'}
+                        bodyText={'17:28:15 PM'}
+                        bodyTextStyles={styles.riseSet_text}
+                    />
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -51,9 +64,13 @@ const styles = StyleSheet.create({
         fontSize: 30,
     },
 
-    Population: {
+    layout_rowCenter: {
         flexDirection: 'row', 
         alignItems: 'center', 
+    },
+
+    Population: {
+        
         justifyContent: 'center',
         marginTop: 30,
     }, 
@@ -62,12 +79,9 @@ const styles = StyleSheet.create({
         fontSize: 35,
         marginLeft: 7.5, 
         color: 'red',
-        fontWeight: 'bold',
     },
 
     RiseSet: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'space-around', 
         marginTop: 30,
     }, 
@@ -75,7 +89,6 @@ const styles = StyleSheet.create({
     riseSet_text: {
         fontSize: 20, 
         color: 'white', 
-        fontWeight: 'bold'
     },
 
 })
