@@ -10,8 +10,24 @@ const App = () => {
   //TODO: can access the platform the user is using to do conditional Top or Bottom navigation
 
   const [loading, setLoading] = useState(true)
-  const [location, setLocation] = useState(null)
   const [error, setError] = useState(null)
+  const [lat, setLat] = useState([])
+  const [long, setLong] = useState([])
+  const [weather, setWeather] = useState([])
+
+  const fetchWeatherData = async () => {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${process.env.TEST_KEY}`
+      )
+      const data = await res.json()
+      setWeather(data)
+    } catch (e) {
+      setError('Could not fetch weather data')
+    } finally {
+      setLoading(false)
+    }
+  }
   useEffect(() => {
     ;(async () => {
       let { status } = await Location.requestForegroundPermissionsAsync()
@@ -20,14 +36,16 @@ const App = () => {
         return
       }
       let location = await Location.getCurrentPositionAsync({})
-      setLocation(location)
+      setLat(location.coords.latitude)
+      setLong(location.coords.longitude)
+      await fetchWeatherData()
     })()
-  }, [])
+  }, [lat, long])
 
-  console.log(process.env.TEST_KEY)
-
-  if (location) {
-    console.log(location)
+  //TODO: why does it print 4 times if long/lat isnt chnaging
+  if (weather) {
+    console.log('the weather is:')
+    console.log(weather)
   }
 
   //TODO: theres a couple ways to do "conditional rendering"
