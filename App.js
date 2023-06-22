@@ -3,44 +3,12 @@ import { View, ActivityIndicator, StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import Tabs from './src/components/Tabs'
 import * as Location from 'expo-location'
+import { useGetWeather } from './src/hooks/useGetWeather'
 
 //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 const App = () => {
-  //TODO: can access the platform the user is using to do conditional Top or Bottom navigation
-
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [lat, setLat] = useState([])
-  const [long, setLong] = useState([])
-  const [weather, setWeather] = useState([])
-
-  const fetchWeatherData = async () => {
-    try {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${process.env.TEST_KEY}`
-      )
-      const data = await res.json()
-      setWeather(data)
-    } catch (e) {
-      setError('Could not fetch weather data')
-    } finally {
-      setLoading(false)
-    }
-  }
-  useEffect(() => {
-    ;(async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync()
-      if (status !== 'granted') {
-        setError('permission to access location was denied')
-        return
-      }
-      let location = await Location.getCurrentPositionAsync({})
-      setLat(location.coords.latitude)
-      setLong(location.coords.longitude)
-      await fetchWeatherData()
-    })()
-  }, [lat, long])
+  const [loading, error, weather] = useGetWeather()
 
   //TODO: why does it print 4 times if long/lat isnt chnaging
   if (weather) {
@@ -57,6 +25,7 @@ const App = () => {
     )
   }
 
+  //TODO: can access the platform the user is using to do conditional Top or Bottom navigation
   return (
     <NavigationContainer>
       <Tabs />
