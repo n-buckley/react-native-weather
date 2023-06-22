@@ -12,7 +12,6 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [location, setLocation] = useState(null)
   const [error, setError] = useState(null)
-
   useEffect(() => {
     ;(async () => {
       let { status } = await Location.requestForegroundPermissionsAsync()
@@ -24,6 +23,8 @@ const App = () => {
       setLocation(location)
     })()
   }, [])
+
+  console.log(process.env.TEST_KEY)
 
   if (location) {
     console.log(location)
