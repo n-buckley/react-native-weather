@@ -25,7 +25,7 @@ const CurrentWeather = ({ weatherData }) => {
           color="black"
         />
         <Text>Current Weather</Text>
-        <Text style={styles.header_temp}>{temp}</Text>
+        <Text style={styles.header_temp}>{`${temp}°`}</Text>
         <Text style={styles.header_feels}>{`Feels like: ${feels_like}°`}</Text>
         <RowText
           leftText={`High: ${temp_max}° `}
@@ -83,11 +83,11 @@ const styles = StyleSheet.create({
   },
 
   body_description: {
-    fontSize: 48
+    fontSize: 40
   },
 
   body_message: {
-    fontSize: 30
+    fontSize: 25
   }
 })
 
