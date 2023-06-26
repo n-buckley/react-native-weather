@@ -12,10 +12,10 @@ const App = () => {
   const [loading, error, weather] = useGetWeather()
 
   //TODO: why does it print 4 times if long/lat isnt chnaging
-  if (weather) {
-    console.log('the weather is:')
-    console.log(weather)
-  }
+  // if (weather) {
+  //   console.log('the weather is:')
+  //   console.log(weather)
+  // }
 
   //TODO: theres a couple ways to do "conditional rendering"
   if (weather && weather.list) {
