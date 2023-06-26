@@ -32,6 +32,8 @@ And then days later, when writing this, I decided for shits and gigs lets try `r
 
 ## Improvements + Questions
 
+[ ] would like to be able to type in a location/city not just use current location -- i think this is #1 priority bc I will have to research documentation on my own
+
 [ ] I want to also load the error screen when the API call errors and returns a '400' and also show custom error messages depending on the error
 
 [ ] Why do the images load so slow ;-; ?
@@ -41,8 +43,6 @@ And then days later, when writing this, I decided for shits and gigs lets try `r
 [ ] How to cut off the list of forecast to maybe like 15 items? Bc otherwise i think it keeps fetching data? 
 
 [ ] Obviously its not the prettiest I want to try and make it prettier but I don't know if thats the best use of my time?
-
-[ ] would like to be able to type in a location/city not just use current location
 
 ---
 
