@@ -17,19 +17,19 @@ const App = () => {
   }
 
   //TODO: theres a couple ways to do "conditional rendering"
-  if (loading) {
+  if (weather && weather.list) {
+    //TODO: can access the platform the user is using to do conditional Top or Bottom navigation
     return (
-      <View style={styles.IndicatorWrapper}>
-        <ActivityIndicator size={'large'} color={'blue'} />
-      </View>
+      <NavigationContainer>
+        <Tabs weather={weather} />
+      </NavigationContainer>
     )
   }
 
-  //TODO: can access the platform the user is using to do conditional Top or Bottom navigation
   return (
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
+    <View style={styles.IndicatorWrapper}>
+      <ActivityIndicator size={'large'} color={'blue'} />
+    </View>
   )
 }
 
