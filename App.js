@@ -29,10 +29,10 @@ const App = () => {
 
   return (
     <View style={styles.IndicatorWrapper}>
-      {loading ? (
-        <ActivityIndicator size={'large'} color={'blue'} />
-      ) : (
+      {error ? (
         <ErrorItem />
+      ) : (
+        <ActivityIndicator size={'large'} color={'blue'} />
       )}
     </View>
   )
