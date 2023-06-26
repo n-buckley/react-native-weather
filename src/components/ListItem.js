@@ -8,7 +8,7 @@ const ListItem = (props) => {
   const { dt_txt, min, max, condition } = props
   return (
     <View style={styles.Item}>
-      <Feather name={weatherType[condition].icon} size={50} color="white" />
+      <Feather name={weatherType[condition]?.icon} size={50} color="white" />
       <View style={styles.DateTextWrapper}>
         <Text style={styles.item_date}>{moment(dt_txt).format('dddd')}</Text>
         <Text style={styles.item_date}>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderWidth: 5,
-    backgroundColor: 'pink'
+    backgroundColor: 'lightslategrey'
   },
 
   item_temp: {

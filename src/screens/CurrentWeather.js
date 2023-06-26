@@ -9,18 +9,18 @@ const CurrentWeather = ({ weatherData }) => {
     weather,
     main: { temp, feels_like, temp_max, temp_min }
   } = weatherData
-  const weatherCondition = weather[0].main
+  const weatherCondition = weather[0]?.main
 
   return (
     <SafeAreaView
       style={[
         styles.SafeArea,
-        { backgroundColor: weatherType[weatherCondition].backgroundColor }
+        { backgroundColor: weatherType[weatherCondition]?.backgroundColor }
       ]}
     >
       <View style={styles.Header}>
         <Feather
-          name={weatherType[weatherCondition].icon}
+          name={weatherType[weatherCondition]?.icon}
           size={100}
           color="black"
         />
@@ -37,7 +37,7 @@ const CurrentWeather = ({ weatherData }) => {
       </View>
       <RowText
         leftText={weather[0].description}
-        rightText={weatherType[weatherCondition].message}
+        rightText={weatherType[weatherCondition]?.message}
         containerStyle={styles.Body}
         leftStyle={styles.body_description}
         rightStyle={styles.body_message}
