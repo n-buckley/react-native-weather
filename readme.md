@@ -4,6 +4,8 @@ I created a weather app that requests the 5 day / 3 hour forecast from [OpenWeat
 
 The app has 3 screens that update based on the weather. The weather effects changes in the styles (background color), icons, and text namely the temperatures (in F°) and custom messages.
 
+<img src="./assets/react-native-weather-demo.gif" height="50%" title="React Native Weather App Demo">
+
 The _first screen_ shows the current weather including the current temperature, what it currently feels like, and the day's highest and lowest temperature. The background color of the screen changes based on the weather condition (sunny, rainy, etc) as well as a message describing the condition. 
 
 The _second screen_ is a scrollable list of upcoming weather forecast (every 3 hours). Each list item has an icon depending on the weather condition, the day and time of the forecast, as well as the forecast high/low temp.  
