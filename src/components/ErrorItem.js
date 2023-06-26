@@ -6,7 +6,7 @@ const ErrorItem = ({ weatherData }) => {
   return (
     <View style={styles.ErrorItem}>
       <Text style={styles.errorMessage}>Sorry something went wrong</Text>
-      <Feather name={'frown'} size={100} coloe={'white'} />
+      <Feather name={'frown'} size={100} color={'white'} />
     </View>
   )
 }
