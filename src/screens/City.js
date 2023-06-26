@@ -8,8 +8,11 @@ import {
   View
 } from 'react-native'
 import IconText from '../components/IconText'
+import moment from 'moment'
 
-const City = () => {
+const City = ({ weatherData }) => {
+  const { name, country, population, sunrise, sunset } = weatherData
+
   //TODO: is descrutuing styles something thats typical/good practice?
   return (
     <SafeAreaView style={styles.SafeArea}>
@@ -17,15 +20,13 @@ const City = () => {
         source={require('../../assets/pexels-bob-ward-3347244.jpg')}
         style={styles.ImageBackground}
       >
-        <Text style={[styles.city_name, styles.city_text]}>City Name</Text>
-        <Text style={[styles.city_country, styles.city_text]}>
-          Country Name
-        </Text>
+        <Text style={[styles.city_name, styles.city_text]}>{name}</Text>
+        <Text style={[styles.city_country, styles.city_text]}>{country}</Text>
         <View style={[styles.Population, styles.layout_rowCenter]}>
           <IconText
             iconName={'user'}
             iconColor={'red'}
-            bodyText={'8000'}
+            bodyText={`Population: ${population}`}
             bodyTextStyles={styles.population_text}
           />
         </View>
@@ -33,13 +34,13 @@ const City = () => {
           <IconText
             iconName={'sunrise'}
             iconColor={'white'}
-            bodyText={'10:46:58 AM'}
+            bodyText={moment(sunrise).format('h:mm:ss a')}
             bodyTextStyles={styles.riseSet_text}
           />
           <IconText
             iconName={'sunset'}
             iconColor={'white'}
-            bodyText={'17:28:15 PM'}
+            bodyText={moment(sunset).format('h:mm:ss a')}
             bodyTextStyles={styles.riseSet_text}
           />
         </View>
