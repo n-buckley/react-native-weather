@@ -48,5 +48,12 @@ And then days later, when writing this, I decided for shits and gigs lets try `r
 
 ---
 
-Made using the [freeCodeCamp](https://www.youtube.com/watch?v=obH0Po_RdWk) tutorial using [React Native](
-https://reactnative.dev/docs/environment-setup) and [Expo](https://docs.expo.dev/). 
+**Made using the [freeCodeCamp](https://www.youtube.com/watch?v=obH0Po_RdWk) tutorial using [React Native](https://reactnative.dev/docs/environment-setup) and [Expo](https://docs.expo.dev/).**
+
+**Other resources I referenced:**
+I used kind of a combination of the below to make commit messages for this project. It was kinds of hard to wrap my head around that any small change to production code would have to be a `feat:` so I likes `add:` better. e.g. If I wanted to add degree symbols it seemed silly to call that a new feature but it was definitely an addition. 
+[Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+[Tagging Commit Messages](https://stackoverflow.com/questions/8741290/tagging-commit-messages-and-changesets)
+
+I kind of wanted to try following this and sometimes these naming conventions made sense... and sometimes they didn't so I vaguely followed them
+[BEM with React]( https://medium.com/trabe/a-comprehensive-guide-to-using-bem-with-react-14d00c199e0d)
